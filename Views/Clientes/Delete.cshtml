@@ -1,25 +1,41 @@
+<!-- Define o modelo da view como Cliente -->
 @model MeuCadastroClientesMvc.Models.Cliente
 
 @{
-    ViewData["Title"] = "Excluir Cliente";
+    
+    ViewData["Title"] = "Excluir Cliente"; <!-- Define o título da página -->
 }
 
-<h1>Excluir Cliente</h1>
+<!-- Título da página -->
 
+<h1>Excluir Cliente</h1> 
+
+<!-- Subtítulo para a seção de confirmação -->
 <h3>Confirmação</h3>
+<!-- Pergunta de confirmação para o usuário -->
 <p>Tem certeza que deseja excluir este cliente?</p>
 <div>
+    <!-- Formulário que envia dados para a ação Delete
+     no controlador  usando o método POST -->
     <form asp-action="Delete" method="post">
+    <!-- Campo oculto para o ID do cliente a ser excluído -->
         <input type="hidden" asp-for="ID_Cliente" />
         <div class="form-group">
+     <!-- Botão para confirmar a exclusão
+           com estilo de botão de perigo -->
             <input type="submit" value="Confirmar" class="btn btn-danger" />
+            <!-- Link para cancelar a exclusão 
+            e voltar para a lista de clientes -->
             <a asp-action="Index" class="btn btn-default">Cancelar</a>
         </div>
     </form>
 </div>
-
+<!-- Verifica se há uma mensagem temporária armazenada
+ no TempData -->
 @if (TempData["Message"] != null)
 {
+    <!-- Exibe a mensagem armazenada em TempData["Message"]
+     em um alerta de sucesso -->
     <div class="alert alert-success">@TempData["Message"]</div>
 }
 

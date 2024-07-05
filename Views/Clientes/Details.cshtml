@@ -1,55 +1,76 @@
+<!-- Define o modelo da view como Cliente -->
 @model MeuCadastroClientesMvc.Models.Cliente
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Details"; <!-- Define o título da página -->
 }
 
-<h1>Details</h1>
+<!-- Título da página -->
+<h1>Details</h1> 
 
 <div>
+    <!-- Subtítulo para a seção de detalhes do cliente -->
     <h4>Cliente</h4>
+    <!-- Linha horizontal para separação visual -->
     <hr />
+    
+    <!-- Lista de definições com estilo de linha -->
+
     <dl class="row">
         <dt class="col-sm-2">
+            <!-- Exibe o nome da propriedade Nome -->
             @Html.DisplayNameFor(model => model.Nome)
         </dt>
         <dd class="col-sm-10">
+            <!-- Exibe o valor da propriedade Nome -->
             @Html.DisplayFor(model => model.Nome)
         </dd>
         <dt class="col-sm-2">
+            <!-- Exibe o nome da propriedade Endereco -->
             @Html.DisplayNameFor(model => model.Endereco)
         </dt>
         <dd class="col-sm-10">
+            <!-- Exibe o valor da propriedade Endereco -->
             @Html.DisplayFor(model => model.Endereco)
         </dd>
         <dt class="col-sm-2">
+            <!-- Exibe o nome da propriedade Telefone -->
             @Html.DisplayNameFor(model => model.Telefone)
         </dt>
         <dd class="col-sm-10">
+            <!-- Exibe o valor da propriedade Telefone -->
             @Html.DisplayFor(model => model.Telefone)
         </dd>
         <dt class="col-sm-2">
+            <!-- Exibe o nome da propriedade RG -->
             @Html.DisplayNameFor(model => model.RG)
         </dt>
         <dd class="col-sm-10">
+            <!-- Exibe o valor da propriedade RG -->
             @Html.DisplayFor(model => model.RG)
         </dd>
         <dt class="col-sm-2">
+            <!-- Exibe o nome da propriedade CPF -->
             @Html.DisplayNameFor(model => model.CPF)
         </dt>
         <dd class="col-sm-10">
+            <!-- Exibe o valor da propriedade CPF -->
             @Html.DisplayFor(model => model.CPF)
         </dd>
         <dt class="col-sm-2">
+            <!-- Exibe o nome da propriedade Email -->
             @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd class="col-sm-10">
+            <!-- Exibe o valor da propriedade Email -->
             @Html.DisplayFor(model => model.Email)
         </dd>
     </dl>
 </div>
 
 <div>
+    <!-- Link para a ação Edit  passando o ID do cliente -->
     <a asp-action="Edit" asp-route-id="@Model.ID_Cliente">Edit</a> |
+    <!-- Link para retornar à lista de clientes -->
     <a asp-action="Index">Back to List</a>
 </div>

@@ -1,38 +1,63 @@
+<!-- Define o modelo da view como uma coleção de objetos Cliente -->
 @model IEnumerable<MeuCadastroClientesMvc.Models.Cliente>
 
 @{
-    ViewData["Title"] = "Clientes";
+    ViewData["Title"] = "Clientes"; <!-- Define o título da página -->
 }
 
+<!-- Título da página -->
 <h1>Clientes</h1>
 
 <p>
+    <!-- Link para a ação Create
+     que permite criar um novo cliente -->
     <a asp-action="Create">Create New</a>
 </p>
+<!-- Início da tabela para exibir a lista de clientes -->
 <table class="table">
     <thead>
         <tr>
+            <!-- Cabeçalho da coluna ID -->
             <th>ID</th>
+            <!-- Cabeçalho da coluna Nome -->
             <th>Nome</th>
+            <!-- Cabeçalho da coluna Endereço -->
             <th>Endereço</th>
+            <!-- Cabeçalho da coluna Telefone -->
             <th>Telefone</th>
+            <!-- Cabeçalho da coluna RG -->
             <th>RG</th>
+            <!-- Cabeçalho da coluna CPF -->
             <th>CPF</th>
+            <!-- Cabeçalho da coluna Email -->
             <th>Email</th>
+            <!-- Cabeçalho da coluna para ações (vazia,
+             pois será preenchida com links de ação) -->
             <th></th>
         </tr>
     </thead>
     <tbody>
+        <!-- Loop para iterar sobre cada item (cliente)
+         na coleção do modelo -->
 @foreach (var item in Model) {
         <tr>
+            <!-- Exibe o ID do cliente -->
             <td>@item.ID_Cliente</td>
+            <!-- Exibe o nome do cliente -->
             <td>@item.Nome</td>
+            <!-- Exibe o endereço do cliente -->
             <td>@item.Endereco</td>
+            <!-- Exibe o telefone do cliente -->
             <td>@item.Telefone</td>
+            <!-- Exibe o RG do cliente -->
             <td>@item.RG</td>
+            <!-- Exibe o CPF do cliente -->
             <td>@item.CPF</td>
+            <!-- Exibe o email do cliente -->
             <td>@item.Email</td>
             <td>
+                <!-- Links para ações Edit, Details e Delete
+                 passando o ID do cliente como parâmetro -->
                 <a asp-action="Edit" asp-route-id="@item.ID_Cliente">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID_Cliente">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.ID_Cliente">Delete</a>

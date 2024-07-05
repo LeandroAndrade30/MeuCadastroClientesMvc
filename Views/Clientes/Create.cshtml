@@ -1,44 +1,67 @@
+<!-- Define o modelo da view como Cliente -->
 @model MeuCadastroClientesMvc.Models.Cliente
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create"; <!-- Define o título da página -->
 }
 
+
+ <!-- Título da página -->
 <h1>Create</h1>
 
 <div class="row">
     <div class="col-md-4">
+        <!-- Formulário que envia dados para a ação Create
+         no controlador -->
         <form asp-action="Create">
+            <!-- Exibe mensagens de validação -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <!-- Label para o campo Nome -->
                 <label asp-for="Nome" class="control-label"></label>
+                <!-- Campo de entrada para o Nome -->
                 <input asp-for="Nome" class="form-control" />
+                <!-- Exibe mensagens de validação para o Nome -->
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <!-- Label para o campo Endereco -->
                 <label asp-for="Endereco" class="control-label"></label>
+                <!-- Campo de entrada para o Endereco -->
                 <input asp-for="Endereco" class="form-control" />
             </div>
             <div class="form-group">
+                <!-- Label para o campo Telefone -->
                 <label asp-for="Telefone" class="control-label"></label>
+                <!-- Campo de entrada para o Telefone -->
                 <input asp-for="Telefone" class="form-control" />
+                <!-- Exibe mensagens de validação para o Telefone -->
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <!-- Label para o campo RG -->
                 <label asp-for="RG" class="control-label"></label>
+                <!-- Campo de entrada para o RG -->
                 <input asp-for="RG" class="form-control" />
             </div>
             <div class="form-group">
+                <!-- Label para o campo CPF -->
                 <label asp-for="CPF" class="control-label"></label>
+                <!-- Campo de entrada para o CPF -->
                 <input asp-for="CPF" class="form-control" />
+                <!-- Exibe mensagens de validação para o CPF -->
                 <span asp-validation-for="CPF" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <!-- Label para o campo Email -->
                 <label asp-for="Email" class="control-label"></label>
+                <!-- Campo de entrada para o Email -->
                 <input asp-for="Email" class="form-control" />
+                <!-- Exibe mensagens de validação para o Email -->
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <!-- Botão de submissão do formulário -->
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -46,9 +69,11 @@
 </div>
 
 <div>
+     <!-- Link para retornar à lista de clientes -->
     <a asp-action="Index">Back to List</a>
 </div>
 
+<!-- Renderiza scripts de validação -->
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
