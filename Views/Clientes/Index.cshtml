@@ -6,12 +6,12 @@
 }
 
 <!-- Título da página -->
-<h1>Clientes</h1>
+<h1>Cadastro de Clientes</h1>
 
 <p>
     <!-- Link para a ação Create
      que permite criar um novo cliente -->
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn-novo-cliente">Novo Cliente</a>
 </p>
 <!-- Início da tabela para exibir a lista de clientes -->
 <table class="table">
@@ -58,9 +58,9 @@
             <td>
                 <!-- Links para ações Edit, Details e Delete
                  passando o ID do cliente como parâmetro -->
-                <a asp-action="Edit" asp-route-id="@item.ID_Cliente">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID_Cliente">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID_Cliente">Delete</a>
+                <a asp-action="Edit" id="edit" asp-route-id="@item.ID_Cliente">Editar</a> 
+                <a asp-action="Details" id="details" asp-route-id="@item.ID_Cliente">Detalhes</a> 
+                <a asp-action="Delete" id="delete" asp-route-id="@item.ID_Cliente">Deletar</a>
             </td>
         </tr>
 }

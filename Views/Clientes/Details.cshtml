@@ -6,7 +6,7 @@
 }
 
 <!-- Título da página -->
-<h1>Details</h1> 
+<h1>Detalhes</h1> 
 
 <div>
     <!-- Subtítulo para a seção de detalhes do cliente -->
@@ -70,7 +70,7 @@
 
 <div>
     <!-- Link para a ação Edit  passando o ID do cliente -->
-    <a asp-action="Edit" asp-route-id="@Model.ID_Cliente">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.ID_Cliente" class="btn-link-editar-detalhes">Edit</a> 
     <!-- Link para retornar à lista de clientes -->
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn-link-voltar-lista">Voltar para a Lista</a>
 </div>
